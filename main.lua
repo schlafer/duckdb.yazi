@@ -136,6 +136,7 @@ function M:entry(job)
 	local scrolled_columns = get_opts("scrolled_columns") or 0
 	scrolled_columns = math.max(0, scrolled_columns + scroll_delta)
 	set_opts("scrolled_columns", scrolled_columns)
+	set_opts("re_peek", true)
 
 	-- Force a re-peek so the newly scrolled columns repaint. On yazi 26.x the old
 	-- `ya.emit("seek", ...)` no longer triggers a preview refresh here.
